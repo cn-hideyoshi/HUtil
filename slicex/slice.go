@@ -1,4 +1,4 @@
-package slice
+package slicex
 
 // InSlice reports whether target exists in list.
 func InSlice[T comparable](list []T, target T) bool {
