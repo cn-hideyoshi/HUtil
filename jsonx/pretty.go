@@ -21,13 +21,13 @@ func Format(input string) (string, error) {
 
 // 压缩
 func Compress(input string) (string, error) {
-	var obj interface{}
+	var obj any
 	err := json.Unmarshal([]byte(input), &obj)
 	if err != nil {
 		return "", err
 	}
 
-	compressed, err := json.Marshal(obj)
+	compressed, err := Marshal(obj)
 	if err != nil {
 		return "", err
 	}
