@@ -26,7 +26,19 @@ func (e *Error) Code() int {
 	return e.code
 }
 
-func New(code int, msg string) *Error {
+func New(code int) *Error {
+	meta, ok := GetMeta(code)
+	if !ok {
+		panic(fmt.Sprintf("errorx: code %d not registered", code))
+	}
+
+	return &Error{
+		code:    meta.Code,
+		message: meta.Msg,
+	}
+}
+
+func NewWithMessage(code int, msg string) *Error {
 	return &Error{
 		code:    code,
 		message: msg,
