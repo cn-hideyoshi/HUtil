@@ -19,13 +19,13 @@ package main
 import (
 	"fmt"
 
-	"github.com/cn-hideyoshi/HUtil/slice"
+	"github.com/cn-hideyoshi/HUtil/slicex"
 )
 
 func main() {
 	nums := []int{1, 2, 3, 4}
-	fmt.Println(slice.InSlice(nums, 3)) // true
-	fmt.Println(slice.InSlice(nums, 5)) // false
+	fmt.Println(slicex.InSlice(nums, 3)) // true
+	fmt.Println(slicex.InSlice(nums, 5)) // false
 }
 ```
 
